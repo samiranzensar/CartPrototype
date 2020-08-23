@@ -1,0 +1,31 @@
+﻿@*@model MVCWithoutAuthentication.Models.DeptEmpDbContext*@
+@model IEnumerable<MVCWithoutAuthentication.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List Of Employee</h2>
+<table class="table table-bordered table-condensed table-condensed">
+    <thead>
+        <tr>
+            <td>Employee Name</td>
+            <td>Employee Sal</td>
+            <td>Employee City</td>
+            <td>Employee Department</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Ename</td>
+                <td>@emp.Esal</td>
+                <td>@emp.City</td>
+                <td>@emp.DeptId</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

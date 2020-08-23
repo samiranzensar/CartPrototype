@@ -1,0 +1,31 @@
+﻿@model WebMvcTill22Aug.ViewModel.CustomerMemberViewModel
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New Customer Insertion</h2>
+@using (Html.BeginForm("Create", "Customers"))
+{
+    <div class="form-group">
+        @Html.Label("Customer Name")
+        @Html.TextBoxFor(c => c.Customer.CName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Date Of Birth")
+        @Html.TextBoxFor(c => c.Customer.DOB, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Member Type")
+        @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes,"Id","PlanName")," ",new { @class="form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Do you want to subscrive newsletter")
+        @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsLetter)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Insert</button>
+}
+

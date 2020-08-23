@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MovieCustomerMvcAppWithAuthentication.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer List</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>CustomerName</th>
+            <th>DiscountRate</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cust in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(cust.Name, "Details", "Customers", new { id = cust.Id }, null)</td>
+                <td>@cust.MembershipType.DiscountRate%</td>
+                <td>@cust.DOB.ToLongDateString()</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+@using (Html.BeginForm("New", "Customers"))
+{
+    <button type="submit" class="btn btn-primary">Create</button>
+}
+

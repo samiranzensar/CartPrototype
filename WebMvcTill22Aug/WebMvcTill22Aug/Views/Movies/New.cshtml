@@ -1,0 +1,20 @@
+﻿@model WebMvcTill22Aug.ViewModel.MovieGenreViewModel
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Insert a new Movie</h2>
+@using (Html.BeginForm("Create","Movies"))
+{
+    <div class="form-group">
+        @Html.Label("Movie Name")
+        @Html.TextBoxFor(c=>c.Movie.MName,new { @class="form-control"})
+    </div>
+    <div>
+        @Html.Label("Select Genre")
+        @Html.DropDownListFor(d=>d.Movie.GenreId,new SelectList(Model.Genres,"Id","GenreName")," ",new { @class="form-control"})
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Insert</button>
+}
+

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ZensarTrainingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ProductTbl">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" Nullable="false" />
+          <Property Name="PName" Type="varchar" MaxLength="50" />
+          <Property Name="PRate" Type="int" />
+          <Property Name="BookId" Type="int" />
+        </EntityType>
+        <Association Name="FK_ProductTbl_ProductTbl">
+          <End Role="ProductTbl" Type="Self.ProductTbl" Multiplicity="1" />
+          <End Role="ProductTbl1" Type="Self.ProductTbl" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductTbl">
+              <PropertyRef Name="PId" />
+            </Principal>
+            <Dependent Role="ProductTbl1">
+              <PropertyRef Name="PId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ZensarTrainingModelStoreContainer">
+          <EntitySet Name="ProductTbl" EntityType="Self.ProductTbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProductTbl_ProductTbl" Association="Self.FK_ProductTbl_ProductTbl">
+            <End Role="ProductTbl" EntitySet="ProductTbl" />
+            <End Role="ProductTbl1" EntitySet="ProductTbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZensarTrainingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ProductTbl">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" />
+          <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRate" Type="Int32" />
+          <Property Name="BookId" Type="Int32" />
+          <NavigationProperty Name="ProductTbl1" Relationship="Self.FK_ProductTbl_ProductTbl" FromRole="ProductTbl" ToRole="ProductTbl1" />
+          <NavigationProperty Name="ProductTbl2" Relationship="Self.FK_ProductTbl_ProductTbl" FromRole="ProductTbl1" ToRole="ProductTbl" />
+        </EntityType>
+        <Association Name="FK_ProductTbl_ProductTbl">
+          <End Role="ProductTbl" Type="Self.ProductTbl" Multiplicity="1" />
+          <End Role="ProductTbl1" Type="Self.ProductTbl" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductTbl">
+              <PropertyRef Name="PId" />
+            </Principal>
+            <Dependent Role="ProductTbl1">
+              <PropertyRef Name="PId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ZensarTrainingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProductTbls" EntityType="Self.ProductTbl" />
+          <AssociationSet Name="FK_ProductTbl_ProductTbl" Association="Self.FK_ProductTbl_ProductTbl">
+            <End Role="ProductTbl" EntitySet="ProductTbls" />
+            <End Role="ProductTbl1" EntitySet="ProductTbls" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZensarTrainingModelStoreContainer" CdmEntityContainer="ZensarTrainingEntities">
+          <EntitySetMapping Name="ProductTbls">
+            <EntityTypeMapping TypeName="ZensarTrainingModel.ProductTbl">
+              <MappingFragment StoreEntitySet="ProductTbl">
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="PRate" ColumnName="PRate" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

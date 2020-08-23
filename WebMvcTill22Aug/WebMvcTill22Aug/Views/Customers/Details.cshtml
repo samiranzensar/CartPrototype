@@ -1,0 +1,19 @@
+﻿@model WebMvcTill22Aug.Models.Customer
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Customer Details</h2>
+@using (Html.BeginForm("Index", "Customers"))
+{
+    <table class="table table-bordered table-striped">
+        <tr><td>Customer Name</td><td>@Model.CName</td></tr>
+        <tr><td>Date Of Birth </td><td>@Model.DOB</td></tr>
+        <tr><td>Plan Name</td> <td>@Model.MembershipType.PlanName</td></tr>
+        <tr><td>Subscribed To NewsLetter</td> <td>@Html.CheckBoxFor(c => c.IsSubscribedToNewsLetter)</td></tr>
+        <tr><td>Duration </td><td>@Model.MembershipType.DurtionInMonths</td></tr>
+    </table>
+    <button class="btn btn-primary">List</button>
+}
+
+

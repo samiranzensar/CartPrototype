@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MovieCustomerMvcAppWithAuthentication.Models.Movie>
+@{
+    ViewBag.Title = "MovieIndex";
+}
+
+<h2>Movies Index</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Movie Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            @foreach(var mov in Model)
+            {
+                <tr>
+                    <td>@mov.Name</td>
+                    <td>@mov.Genre</td>
+                </tr>
+            }
+    </tbody>
+    
+
+</table>
+

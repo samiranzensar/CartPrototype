@@ -1,0 +1,26 @@
+﻿@model IEnumerable< MVCAppClassDemo.Models.Movie>
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>All Movies</h2>
+<ul>
+    @foreach(var m in Model)
+    {
+        <li>@m.Name</li>
+    }
+    </ul>
+
+<h2>Displaying View Data</h2>
+@*<h3>@(((MVCAppClassDemo.Models.Movie) ViewData["Movie"]).Name)</h3>*@
+
+
+<h2>Displaying Data by viewbag</h2>
+@*<h3>@ViewBag.hindiMov.Name</h3>*@
+
+
+<h3>Display by tempdata</h3>
+@*<h3>@(((MVCAppClassDemo.Models.Movie)TempData["tamilMovie"]).Name)</h3>*@
+

@@ -1,0 +1,12 @@
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\ConEFDataFirst.exe.config
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\ConEFDataFirst.exe
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\ConEFDataFirst.pdb
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\EntityFramework.dll
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\EntityFramework.SqlServer.dll
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\EntityFramework.xml
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\bin\Debug\EntityFramework.SqlServer.xml
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\obj\Debug\ConEFDataFirst.csprojAssemblyReference.cache
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\obj\Debug\ConEFDataFirst.csproj.CoreCompileInputs.cache
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\obj\Debug\ConEFDataFirst.csproj.CopyComplete
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\obj\Debug\ConEFDataFirst.exe
+D:\MicrosoftFullStack\BackEnd\mvc\ConEFDataFirst\ConEFDataFirst\obj\Debug\ConEFDataFirst.pdb

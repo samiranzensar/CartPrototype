@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZensarTrainingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ProductTbl">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="Int32" Nullable="false" />
+    <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRate" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <NavigationProperty Name="ProductTbl1" Relationship="Self.FK_ProductTbl_ProductTbl" FromRole="ProductTbl" ToRole="ProductTbl1" />
+    <NavigationProperty Name="ProductTbl2" Relationship="Self.FK_ProductTbl_ProductTbl" FromRole="ProductTbl1" ToRole="ProductTbl" />
+  </EntityType>
+  <Association Name="FK_ProductTbl_ProductTbl">
+    <End Role="ProductTbl" Type="Self.ProductTbl" Multiplicity="1" />
+    <End Role="ProductTbl1" Type="Self.ProductTbl" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTbl">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="ProductTbl1">
+        <PropertyRef Name="PId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZensarTrainingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ProductTbls" EntityType="Self.ProductTbl" />
+    <AssociationSet Name="FK_ProductTbl_ProductTbl" Association="Self.FK_ProductTbl_ProductTbl">
+      <End Role="ProductTbl" EntitySet="ProductTbls" />
+      <End Role="ProductTbl1" EntitySet="ProductTbls" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

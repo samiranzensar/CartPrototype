@@ -1,0 +1,18 @@
+﻿@model WebMvcTill22Aug.Models.Movie
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Movie Info</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <td><b>Movie Name</b></td>
+        <td>@Model.MName</td>
+    </tr>
+    <tr>
+        <td><b>Genre</b></td>
+        <td>@Model.Genre.GenreName</td>
+    </tr>
+</table>
+

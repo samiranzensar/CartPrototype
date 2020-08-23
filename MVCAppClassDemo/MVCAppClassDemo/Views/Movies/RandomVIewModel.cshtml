@@ -1,0 +1,29 @@
+﻿@model MVCAppClassDemo.View_Model.CustMovViewModel
+@{
+    ViewBag.Title = "RandomVIewModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RandomVIewModel</h2>
+<h3>@Model.Movie.Name</h3>
+@{int count = 0; }
+@if (Model.Customers.Count == 0)
+{
+    <p>No Customers rented the movies</p>
+}
+else
+{
+    <ul>
+        @foreach(var cust in Model.Customers)
+        {
+            <li>@cust.Name</li>
+            count++;
+        }
+    </ul>
+}
+@if (count >= 5)
+{
+    <p>This is popular movie</p>
+}
+
+

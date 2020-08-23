@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebMvcTill22Aug.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customers List</h2>
+
+
+<table class="table  table-bordered table-condensed table-striped">
+    <thead>
+        <tr>
+            <td><b>Customer Name</b></td>
+            <td><b>Operation</b></td>
+        </tr>
+        
+    </thead>
+    <tbody>
+        @foreach (var cust in Model)
+        {
+            <tr>
+                <td>@cust.CName</td>
+                <td>@Html.ActionLink("Details", "Details", "Customers", new { id = cust.Id },new { @class="btn btn-info btn-xs"})&nbsp;&nbsp;@Html.ActionLink("Delete","Delete","Customers",new { id=cust.Id},new { @class="btn btn-danger btn-xs"})</td>
+            </tr>
+            }
+    </tbody>
+</table>
+

@@ -1,0 +1,30 @@
+﻿@model MVCAssignment.Models.Product
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product Details</h2>
+<table class="table table-bordered table-hover">
+    
+
+        <tr>
+            <td>Product Id</td>
+            <td>@Model.Id</td>
+
+
+        </tr>
+        <tr>
+            <td>Product Name</td>
+            <td>@Model.PName</td>
+
+
+        </tr>
+        <tr>
+            <td>Product Rate</td>
+            <td>@Model.PRate</td>
+
+
+        </tr>
+    
+</table>

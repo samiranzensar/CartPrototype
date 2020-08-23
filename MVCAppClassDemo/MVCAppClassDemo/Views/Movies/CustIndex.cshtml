@@ -1,0 +1,13 @@
+﻿@*@model MVCAppClassDemo.Models.Customer*@
+@{
+    ViewBag.Title = "CustIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CustIndex</h2>
+<ul>
+    @foreach(var cus in Model)
+    {
+        <li>@cus.Name</li>
+    }
+</ul>

@@ -1,0 +1,16 @@
+﻿@model MovieCustomerMvcAppWithAuthentication.Models.Customer
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.DOB.ToLongDateString()</p>
+<p>Member Name:@Model.Name</p>
+<p>Discount Rate:@Model.MembershipType.DiscountRate%</p>
+<div>
+
+    <p>Is Member Subscribed To Newsletter: @Html.CheckBoxFor(c => c.IsSubscribedToNewsLetter)</p>
+</div>
+<div>
+    @Html.ActionLink("Back", "Index", "Customers", null, new { @class = "btn btn-success" })
+</div>
