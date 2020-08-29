@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebAppsCart.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in Model)
+        {
+            <tr>
+                @*<td><div style="height:100px; width:100px"><img src="~/Images/@product.ImagePath" /></div></td>*@
+                <td>@product.PName</td>
+                <td>@product.Price</td>
+                <td><a href="@Url.Action("Buy", "Cart", new { id = product.Id })">Buy Now</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
